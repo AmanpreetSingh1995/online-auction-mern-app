@@ -14,3 +14,12 @@ const adminRoutes = require("./routes/admin");
 const productRoutes = require("./routes/product");
 const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
+
+mongoose
+  .connect(MONGODB_URI)
+  .then(() => {
+    app.listen(process.env.PORT, "localhost", () => {
+      console.log("Backend is running at port " + process.env.PORT);
+    });
+  })
+  .catch((err) => console.log(err));
