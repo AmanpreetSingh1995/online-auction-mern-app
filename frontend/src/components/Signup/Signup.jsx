@@ -9,16 +9,44 @@ const Signup = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
-  const [avatar, setAvatar] = useState(null);
-
-  const handleSubmit = () => {
-    console.log("ffffff");
-  };
+  const [avatar, setAvatar] = useState("");
 
   const handleFileInputChange = (e) => {
     const file = e.target.files[0];
     setAvatar(file);
   };
+  const handleSubmit = async (event) => {
+    
+    event.preventDefault();
+    const userInput = {
+      name,
+      email,
+      password,
+      // imageUrl: avatar,
+    };
+    // console.log(userInput);
+    const response = await fetch(
+      `${import.meta.env.VITE_API_BACKEND_URL}signup`,
+      {
+        method: "POST",
+        body: JSON.stringify(userInput),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    if (response.ok) {
+      setName("");
+      setEmail("");
+      setPassword("");
+      setAvatar("");
+      return alert("Account Created Successfully");
+    }
+    // navigate("/login");
+
+  };
+
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -29,7 +57,7 @@ const Signup = () => {
       </div>
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          <form className="space-y-6">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
                 htmlFor="name"
