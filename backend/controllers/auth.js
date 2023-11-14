@@ -5,7 +5,7 @@ const User = require("../models/user");
 const HttpError = require("../util/http-error");
 
 exports.postSignup = async (req, res, next) => {
-    const { name, email, password ,imageUrl, product, address } = req.body;
+    const { name, email, password , imageUrl, product, address } = req.body;
 
   //1) check if the user already exists or not
   const user = await User.findOne({ email: email });

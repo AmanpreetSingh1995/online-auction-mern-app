@@ -12,7 +12,7 @@ const MONGODB_URI = `mongodb+srv://${
 
 const app = express();
 
-// const adminRoutes = require("./routes/admin");
+const adminRoutes = require("./routes/admin");
 // const productRoutes = require("./routes/product");
 // const userRoutes = require("./routes/user");
 const authRoutes = require("./routes/auth");
@@ -29,7 +29,7 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use("/api/admin", adminRoutes);
+app.use("/api/admin", adminRoutes);
 // app.use("/api", userRoutes);
   // app.use("/api", productRoutes);
   app.use("/api", authRoutes);
