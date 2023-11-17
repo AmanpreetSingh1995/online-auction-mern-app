@@ -1,32 +1,37 @@
-import React from 'react';
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import  "./Navigation.css" ;
+import styles from  "./Navigation.module.css" ;
 
 export default function 
 () {
   return (
     <>
-<div className='Navigation-container'>
-        <div className="nav">
-            <nav>
-              <div className='logo'>
+    <nav className={styles["admin-nav"]}>
+      <ul>
+        <li className={styles["nav-item"]}>
+          <Link to="/">
+          <div className={styles["logo"]}>
                 <img src={logo} alt="" />
               </div>
-              <div>
-                <span>My Biddings</span>
-              </div>
-              <div>
-                <span>Auction Products</span>
-              </div>
-              <div>
-                <span>My Products</span>
-              </div>
-              <div>
-                <span>Add Product</span>
-              </div>
-            </nav>
-          </div>
-    </div>
+          </Link>
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link to="//addProduct"><span>Add Product</span></Link>
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link to="/admin/products"><span>My Products</span></Link>
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link to="/admin/products"><span>My Biddings</span></Link>
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link to="/sign-up" ><span>Signup</span></Link>
+        </li>
+        <li className={styles["nav-item"]}>
+          <Link to="/login"><span>Login</span></Link>
+        </li>
+      </ul>
+    </nav>
     </>
   )
 }

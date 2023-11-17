@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import styles from "../../style/styles";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { RxAvatar } from "react-icons/rx";
+import Navigation from '../Navigation/Navigation.jsx';
+
 
 const Signup = () => {
   const [email, setEmail] = useState("");
@@ -49,6 +51,8 @@ const Signup = () => {
 
 
   return (
+    <>
+    <Navigation/>
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
@@ -180,6 +184,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 
