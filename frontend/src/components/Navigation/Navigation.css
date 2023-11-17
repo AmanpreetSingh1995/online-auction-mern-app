@@ -1,0 +1,63 @@
+.Navigation-container {
+  width: 100%;
+  height: 100%;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Prompt', sans-serif;
+  background-color: rgb(36, 36, 36);
+  transition: 0.4s;
+}
+.Navigation-container:hover {
+  background-color: rgb(46, 45, 45);
+}
+
+.Navigation-container .nav{
+  width: 100%;
+  height: 7vh;
+  display: flex ;
+  justify-content: start;
+  align-items: flex-start;
+}
+.nav nav {
+  width: 50%;
+  height: 100%;
+  display: flex ;
+  justify-content: start;
+  align-items: flex-start;
+  color: white;
+}
+.nav nav div {
+  width: 20%;
+  height: 100%;
+  display: flex ;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav nav div:nth-child(1) img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    object-fit: contain;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 5px;
+}
+
+.nav nav div > span {
+   width: 80%;
+   height: 70%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-weight: 600;
+   border-radius: 25px;
+   cursor: pointer;
+   transition: 0.4s;
+}
+
+.nav nav div > span:hover {
+  background-color: rgb(4, 229, 188);
+}
+
